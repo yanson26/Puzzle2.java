@@ -7,20 +7,23 @@ public class Puzzle2 {
         Scanner in = new Scanner(new File("Puzzle2.txt"));
         int score = 0;
 
-        // A,X : Rock , B,Y : Paper, C,Z : Scissor
+        // A : Rock , B : Paper, C : Scissor
+        // X : Lose , Y : Draw , Z : Win
+        // 1 for Rock, 2 for Paper, and 3 for Scissors
+        // 0 if you lost, 3 if the round was a draw, and 6 if you won
 
         while(in.hasNext()){
             String s = in.nextLine();
             String[] x = s.split(" ");
 
             if(x[0].equals("A") && x[1].equals("X")){
-                score += 4;
+                score += 3;
             }
             if(x[0].equals("A") && x[1].equals("Y")){
-                score += 8;
+                score += 4;
             }
             if(x[0].equals("A") && x[1].equals("Z")){
-                score += 3;
+                score += 8;
             }
             if(x[0].equals("B") && x[1].equals("X")){
                 score += 1;
@@ -32,13 +35,13 @@ public class Puzzle2 {
                 score += 9;
             }
             if(x[0].equals("C") && x[1].equals("X")){
-                score += 7;
-            }
-            if(x[0].equals("C") && x[1].equals("Y")){
                 score += 2;
             }
-            if(x[0].equals("C") && x[1].equals("Z")){
+            if(x[0].equals("C") && x[1].equals("Y")){
                 score += 6;
+            }
+            if(x[0].equals("C") && x[1].equals("Z")){
+                score += 7;
             }
 
 
